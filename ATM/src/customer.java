@@ -210,8 +210,10 @@ Stage er=new Stage();
 		window.setScene(Homepage());
 //		money.getText();
 //		money.setText("");
-		if(client.getBalance()<0)
+		if(client.getBalance()<0) {
+			client.setBalance(0);
 		er.setScene(error());
+		}
 		else {
 			System.out.println(client.getBalance());
 			if(i1==5) {
