@@ -104,7 +104,7 @@ Stage er=new Stage();
     		if(i1>4) {
     			//System.out.println(an[i1]);	
     			info.setText(ap[i1-1].toString());
-    		}else if(i1<4){
+    		}else if(i1<4&&i1>0){
     			//System.out.println(an[i1+1]);	
     			info.setText(ap[i1+1].toString());
     		i1++;
