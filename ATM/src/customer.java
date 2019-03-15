@@ -96,15 +96,11 @@ Stage er=new Stage();
     		String a=buff.toString();
     		money.setText(a);
     		});
-//    	info.setOnAction((event) ->{
-//    		String s=money.getText()+j.getText();
-//    		info.setText(s);
-//    	});
     	next.setOnAction((event) ->{
     		if(i1>4) {
     			//System.out.println(an[i1]);	
     			info.setText(ap[i1-1].toString());
-    		}else if(i1<4&&i1>0){
+    		}else if(i1<4||i1>0){
     			//System.out.println(an[i1+1]);	
     			info.setText(ap[i1+1].toString());
     		i1++;
