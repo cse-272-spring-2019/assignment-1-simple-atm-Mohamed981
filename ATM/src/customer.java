@@ -124,8 +124,6 @@ Stage er=new Stage();
     	});
     	
     	
-    	//next.setOnAction(e->window.setScene(scene2));
-    	
     	this.window=primaryStage;
         primaryStage.setTitle("ATM");
         Label CardNumber=new Label("Card number =");
@@ -170,13 +168,9 @@ Stage er=new Stage();
         gridOfHomepage.add(balance,3,0);
         gridOfHomepage.add(prev,1,2);
         gridOfHomepage.add(info, 4, 0);
-        //grid.add(info, 4, 0);
         gridOfHomepage.add(next,3,2);
         
-        deposit.setOnAction((event) ->{
-    		window.setScene(DepositPage());
-    		
-    	});
+        deposit.setOnAction(e ->window.setScene(DepositPage()));
         withdraw.setOnAction(e ->window.setScene(WithDraw()));
         balance.setOnAction(e ->window.setScene(Balance()));
         
@@ -208,14 +202,12 @@ Stage er=new Stage();
  	submit.setOnAction((event) ->{
 		client.withdrawalMethod(Long.parseLong(money.getText()));
 		window.setScene(Homepage());
-//		money.getText();
-//		money.setText("");
 		if(client.getBalance()<0) {
 			client.setBalance(0);
 		er.setScene(error());
 		}
 		else {
-			System.out.println(client.getBalance());
+			//System.out.println(client.getBalance());
 			if(i1==5) {
     			i1--;
     			ax=Long.parseLong(money.getText());
@@ -238,7 +230,7 @@ Stage er=new Stage();
  }
  public Scene Balance() {
 	 GridPane grid=new GridPane();
-	  System.out.println(client.getBalance());
+	  //System.out.println(client.getBalance());
 	  Label balance=new Label("Balance:");
 	  Button prev1=new Button("Prev");
 	  money.setText(client.getBalance().toString());
@@ -282,9 +274,6 @@ Stage er=new Stage();
     	grid.add(h,2,2);
     	grid.add(i,3,2);
     	grid.add(j,2,3);
-    	
-//    	grid.add(prev, 1, 3);
-//    	grid.add(next, 3, 3);
     	grid.add(money,5,0);
     	grid.add(submit, 3,4 );
     	grid.add(delete, 4, 0);
@@ -293,9 +282,7 @@ Stage er=new Stage();
     		client.DepositMethod(Long.parseLong(money.getText()));
     		
     		window.setScene(Homepage());
-//    	money.getText();
-//    	money.setText(" ");
-    		System.out.println(client.getBalance());
+    		//System.out.println(client.getBalance());
     		if(i1==5) {
     			i1--;
     			ax=Long.parseLong(money.getText());
